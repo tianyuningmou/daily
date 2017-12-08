@@ -1,4 +1,4 @@
-## Homebrew
+# Homebrew
 #### 1.homebrew的安装
 	homebrew安装：/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	homebrew更新：brew update
