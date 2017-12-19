@@ -8,7 +8,7 @@
 	sudo vi /etc/hosts
 
 #### 修改nginx配置文件，设置反向代理
-	sudo vim /usr/local/bin/nginx/nginx.conf
+	sudo vim /usr/local/etc/nginx/nginx.conf
 	
 #### 找到server ---> location块，在块内添加如下内容：
 	proxy_pass [网址]
