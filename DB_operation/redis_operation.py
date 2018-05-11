@@ -42,9 +42,9 @@ print(redis_conn.smembers('no_sql'))
 
 # 测试管道
 def time_sum(func):
-    def time_interval(*args):
+    def time_interval(*args, **kwargs):
         start_time = time.time()
-        func(*args)
+        func(*args, **kwargs)
         end_time = time.time()
         print('spend time: {time} s'.format(time=end_time-start_time))
     return time_interval()
