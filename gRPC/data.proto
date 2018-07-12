@@ -1,0 +1,12 @@
+syntax = "proto3";
+package data;
+service FormatData {
+    rpc DoFormat(DataResponse) returns(DataReplay) {}
+}
+message DataResponse {
+    string text = 1;
+}
+
+message DataReplay {
+    string message = 1;
+}
