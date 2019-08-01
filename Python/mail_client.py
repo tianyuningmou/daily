@@ -115,7 +115,7 @@ class SMTP_Client(object):
         text = MIMEText(_MAIL_SIGNATURE_, 'plain', 'utf-8')
         msg_root.attach(text)
 
-        #解析内嵌的图片并添加到邮件中
+        # 解析内嵌的图片并添加到邮件中
         for index, image in enumerate(embedded_img_list, start=1):
             msg_text = MIMEText('图片加载不正常')
             msg_alternative.attach(msg_text)
@@ -126,7 +126,7 @@ class SMTP_Client(object):
                 tmp_img.add_header("Content-ID", "<image{INDEX}>".format(INDEX=index))
                 msg_root.attach(tmp_img)
 
-        #解析图片附件并添加
+        # 解析图片附件并添加
         for attach_image in attachment_img_list:
             with open(attach_image, 'rb') as f:
                 mime = MIMEBase('image', 'png', filename=os.path.basename(attach_image))
@@ -137,7 +137,7 @@ class SMTP_Client(object):
                 encoders.encode_base64(mime)
                 msg_root.attach(mime)
 
-        #解析非图片类的附加并添加
+        # 解析非图片类的附加并添加
         for attach_file in attachment_list:
             att = MIMEText(open(attach_file, 'rb').read(), 'base64', 'gb2312')
             att["Content-Type"] = 'application/octet-stream'
