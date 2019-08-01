@@ -24,6 +24,7 @@ MODIFIED: : @Time : 2018/3/6 上午9:45
     它通常应该返回一个编码字符串，可以用来重新创建对象，或者给开发者详细的显示。
 """
 
+
 class Test(object):
     def __init__(self, value='Hello World!'):
         self.data = value
@@ -37,6 +38,7 @@ class TestStr(Test):
 class TestRepr(Test):
     def __repr__(self):
         return '[Repr_Value: %s]' % self.data
+
 
 if __name__ == '__main__':
     ts = TestStr()
